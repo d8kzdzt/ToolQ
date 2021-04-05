@@ -1,0 +1,91 @@
+package com.toolq.qq.protocol.jce.group;
+
+import com.qq.taf.Jce;
+import com.qq.taf.jce.JceInputStream;
+
+public class TroopMemberInfo extends Jce<TroopMemberInfo> {
+    static QzoneUserInfo cache_qzusrinfo = new QzoneUserInfo();
+    static byte[] cache_vecGroupHonor = new byte[1];
+    public byte Age;
+    public short FaceId;
+    public byte Gender;
+    public long MemberUin;
+    public String Nick = "";
+    public byte Status = 20;
+    public String job = "";
+    public byte cApolloFlag;
+    public byte cConcerned;
+    public byte cGender;
+    public byte cRichCardNameVer;
+    public byte cShielded;
+    public long dwApolloTimestamp;
+    public long dwBigClubFlag;
+    public long dwBigClubLevel;
+    public long dwCreditLevel;
+    public long dwFlag;
+    public long dwFlagExt;
+    public long dwGlobalGroupLevel;
+    public long dwGlobalGroupPoint;
+    public long dwJoinTime;
+    public long dwLastSpeakTime;
+    public long dwMemberLevel;
+    public long dwNameplate;
+    public long dwPoint;
+    public long dwShutupTimestap = 0;
+    public long dwSpecialTitleExpireTime;
+    public long dwTitleId;
+    public long dwVipLevel;
+    public long dwVipType;
+    public QzoneUserInfo qzusrinfo;
+    public String sEmail = "";
+    public String sMemo = "";
+    public String sName = "";
+    public String sPhone = "";
+    public String sShowName = "";
+    public String sSpecialTitle = "";
+    public String strAutoRemark = "";
+    public byte[] vecGroupHonor;
+
+    @Override
+    public void readFrom(JceInputStream jceInputStream) {
+        this.MemberUin = jceInputStream.read(this.MemberUin, 0, true);
+        this.FaceId = jceInputStream.read(this.FaceId, 1, true);
+        this.Age = jceInputStream.read(this.Age, 2, true);
+        this.Gender = jceInputStream.read(this.Gender, 3, true);
+        this.Nick = jceInputStream.readString(4, true);
+        this.Status = jceInputStream.read(this.Status, 5, true);
+        this.sShowName = jceInputStream.readString(6, false);
+        this.sName = jceInputStream.readString(8, false);
+        this.cGender = jceInputStream.read(this.cGender, 9, false);
+        this.sPhone = jceInputStream.readString(10, false);
+        this.sEmail = jceInputStream.readString(11, false);
+        this.sMemo = jceInputStream.readString(12, false);
+        this.strAutoRemark = jceInputStream.readString(13, false);
+        this.dwMemberLevel = jceInputStream.read(this.dwMemberLevel, 14, false);
+        this.dwJoinTime = jceInputStream.read(this.dwJoinTime, 15, false);
+        this.dwLastSpeakTime = jceInputStream.read(this.dwLastSpeakTime, 16, false);
+        this.dwCreditLevel = jceInputStream.read(this.dwCreditLevel, 17, false);
+        this.dwFlag = jceInputStream.read(this.dwFlag, 18, false);
+        this.dwFlagExt = jceInputStream.read(this.dwFlagExt, 19, false);
+        this.dwPoint = jceInputStream.read(this.dwPoint, 20, false);
+        this.cConcerned = jceInputStream.read(this.cConcerned, 21, false);
+        this.cShielded = jceInputStream.read(this.cShielded, 22, false);
+        this.sSpecialTitle = jceInputStream.readString(23, false);
+        this.dwSpecialTitleExpireTime = jceInputStream.read(this.dwSpecialTitleExpireTime, 24, false);
+        this.job = jceInputStream.readString(25, false);
+        this.cApolloFlag = jceInputStream.read(this.cApolloFlag, 26, false);
+        this.dwApolloTimestamp = jceInputStream.read(this.dwApolloTimestamp, 27, false);
+        this.dwGlobalGroupLevel = jceInputStream.read(this.dwGlobalGroupLevel, 28, false);
+        this.dwTitleId = jceInputStream.read(this.dwTitleId, 29, false);
+        this.dwShutupTimestap = jceInputStream.read(this.dwShutupTimestap, 30, false);
+        this.dwGlobalGroupPoint = jceInputStream.read(this.dwGlobalGroupPoint, 31, false);
+        this.qzusrinfo = (QzoneUserInfo) jceInputStream.readV2(cache_qzusrinfo, 32, false);
+        this.cRichCardNameVer = jceInputStream.read(this.cRichCardNameVer, 33, false);
+        this.dwVipType = jceInputStream.read(this.dwVipType, 34, false);
+        this.dwVipLevel = jceInputStream.read(this.dwVipLevel, 35, false);
+        this.dwBigClubLevel = jceInputStream.read(this.dwBigClubLevel, 36, false);
+        this.dwBigClubFlag = jceInputStream.read(this.dwBigClubFlag, 37, false);
+        this.dwNameplate = jceInputStream.read(this.dwNameplate, 38, false);
+        this.vecGroupHonor = jceInputStream.read(cache_vecGroupHonor, 39, false);
+    }
+}

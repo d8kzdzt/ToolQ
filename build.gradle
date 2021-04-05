@@ -1,0 +1,20 @@
+group = "com.toolq"
+version = "1.0.0-SNAPSHOT"
+
+subprojects {
+    repositories {
+        mavenLocal()
+        maven {
+            name = "AliyunCentral"
+            setUrl("https://maven.aliyun.com/repository/central/")
+        }
+        maven {
+            name = "AliyunJCenter"
+            setUrl("https://maven.aliyun.com/repository/public/")
+        }
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+}

@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.30'
+}
+
+group = "com.toolq"
+version = "1.0.5-SNAPSHOT"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation "com.google.protobuf:protobuf-java:3.12.1"
+    // Json处理依赖
+    implementation "com.google.code.gson:gson:2.8.6"
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    // RSA算法依赖
+    implementation "org.bouncycastle:bcprov-jdk15on:1.46"
+
+    implementation fileTree(include : ["*.jar"], dir : "libs")
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+

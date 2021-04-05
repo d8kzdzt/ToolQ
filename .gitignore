@@ -1,0 +1,14 @@
+.idea/
+out/
+*.iml
+
+.gradle/
+build/
+
+target/
+*.log
+hs_err_pid*
+
+!libs/
+data/
+*.dev.json

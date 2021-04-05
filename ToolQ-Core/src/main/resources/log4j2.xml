@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status = "OFF">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{[%p] %-d{yyyy-MM-dd HH:mm:ss} --> %l%n[massage] %m%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=cyan, DEBUG=cyan,TRACE=blue}"/>
+        </Console>
+
+        <!--过滤器设置输出的级别-->
+        <filter class="LevelRangeFilter">
+            <!--
+                设置日志输出的最小级别
+                框架封装 设置为 INFO
+            -->
+            <param name="levelMin" value="ALL"/>
+            <!--
+                设置日志输出的最大级别
+                框架封装 设置为 WARN
+            -->
+            <param name="levelMax" value="FATAL"/>
+        </filter>
+    </appenders>
+    <loggers>
+        <root level="info">
+            <!-- DailyRollingFileAppender -->
+            <appender-ref ref="Console"/>
+        </root>
+    </loggers>
+</configuration>
