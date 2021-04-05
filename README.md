@@ -35,5 +35,5 @@
 ## 本项目使用
 [MPL协议](https://www.mozilla.org/en-US/MPL/)
 与
-[ToolQ 专用许可证](https://gitlab.acgp.club/zhangshikj/RabitToolQ/blob/master/LICENSE)
+[ToolQ 专用许可证](https://github.com/zhangshikj/ToolQ/blob/main/LICENSE)
 进行授权，请在贡献前阅读！<br/>
