@@ -1,5 +1,7 @@
 #ToolQ
 
+ ### 项目已迁移到Ore项目(ToolQ2.0)
+
  ### 该协议仍然会不定期更新维护（懒
 
  文档 : https://www.luololi.cn/sdk
